@@ -534,7 +534,7 @@ config_mysql(){
     echoG 'Setting DataBase'
     get_sql_ver
     if [ -f ${DBPASSPATH} ]; then 
-        EXISTSQLPASS=$(grep root_mysql_passs ${HMPATH}/.db_password | awk -F '"' '{print $2}'); 
+        EXISTSQLPASS=$(grep root_mysql_pass ${HMPATH}/.db_password | awk -F '"' '{print $2}'); 
     fi    
     if [ "${EXISTSQLPASS}" = '' ]; then
         if (( ${SQL_MAINV} >=10 )) && (( ${SQL_SECV} >=4 && ${SQL_SECV}<=9 )); then
